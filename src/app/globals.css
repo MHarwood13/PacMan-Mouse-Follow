@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.pacman {
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: relative;
+  animation: open-close 0.5s infinite;
+  transform-origin: 50% 50%;
+  background-size: 10px 10px;
+}
+
+@keyframes open-close {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 50%,
+      50% 50%,
+      0% 50%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 100%,
+      50% 50%,
+      0% 0%
+    );
+  }
+}
